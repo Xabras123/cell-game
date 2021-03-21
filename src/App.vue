@@ -20,6 +20,7 @@
       <div id="board">
 
         <div id="cells-board">
+          <div></div>
 
         </div>
 
@@ -29,9 +30,18 @@
 
         <div class="element-placement-buttons">
 
-          <button>Cell</button>
-          <button>Food</button>
-          <button>Predator</button>
+          <button>
+            <p>Cell</p>
+            
+          </button>
+          <button>
+            <p>Food</p>
+            
+          </button>
+          <button>
+            <p>Predator</p>
+            
+          </button>
         
         </div>
 
@@ -40,12 +50,12 @@
 
 
 
-            <div class="slidecontainer">
+            <div class="slidecontainer1">
               <input type="range" orient="vertical" min="1" max="100" value="50" class="slider" id="myRange">
               <p>Days</p>
             </div>
 
-            <div class="slidecontainer">
+            <div class="slidecontainer2">
               <input type="range" orient="vertical" min="1" max="100" value="50" class="slider" id="myRange">
               <p>Board size</p>
             </div>
@@ -94,6 +104,45 @@
   </div-->
 </template>
 
+<script>
+export default {
+
+  
+  data() {
+
+    return{
+      board: {}
+    }
+  },
+
+  mounted() {
+
+
+  },
+
+  created(){
+
+    this.board = this.profile1()
+
+  },
+
+  methods:{
+
+
+        profile1(){
+
+
+            
+
+            console.log('proflie 111');
+            return {};
+        }
+  }
+
+
+}
+</script>
+
 <style>
 
   *{
@@ -107,7 +156,7 @@
 
   .home{
 
-      height: 100vh;
+      height: 100%;
       font-family: 'Lato', sans-serif;
 
       display: grid;
@@ -115,16 +164,16 @@
       grid-template-rows: repeat(10, 1fr);
    
       grid-template-areas: 
-      "title     title     title     title     title     title title"
-      "title     title     title     title     title     title title"
-      "board     board     board     board  controls  controls controls"
-      "board     board     board     board  controls  controls controls"
-      "board     board     board     board  controls  controls controls"
-      "board     board     board     board  controls  controls controls"
-      "board     board     board     board  controls  controls controls"
-      "board     board     board     board  controls  controls controls"
-      "board     board     board     board  controls  controls controls"
-      "footer    footer    footer    footer    footer    footer footer"
+      "title     title     title     title     title     title    title"
+      "title     title     title     title     title     title    title"
+      "board     board     board     board     controls  controls controls"
+      "board     board     board     board     controls  controls controls"
+      "board     board     board     board     controls  controls controls"
+      "board     board     board     board     controls  controls controls"
+      "board     board     board     board     controls  controls controls"
+      "board     board     board     board     controls  controls controls"
+      "board     board     board     board     controls  controls controls"
+      "footer    footer    footer    footer    footer    footer   footer"
       ;
   }
 
@@ -167,10 +216,21 @@
   #cells-board{
     background-color: #DFC894;
     border: 3px solid #DC8B70;
+    padding: 1em;
 
     border-radius: 7px;
-    height: 100%;
+    height: 92%;
     width: 70%;
+
+
+  }
+
+  #cells-board div{
+
+    background-color: #eecdc3;
+    height: 10%;
+    width: 70%;
+
 
 
   }
@@ -197,9 +257,6 @@
   .element-placement-buttons {
 
     grid-area: element-placement-buttons;
-    
-
-    
 
   }
 
@@ -208,14 +265,21 @@
     padding: 0.6em 0 0.6em 0;
     width: 33%;
     display: block;
-    border: 2px solid #106591;
+    border: 0.16em solid #106591;
     color: #106591;
     background-color: #68FFFA;
     border-radius: 5px;
     font-weight: 500;
-    
+    height: 25%;
    
   }
+
+  button p{
+
+    font-size: 100%;
+  }
+
+
 
 
   .sliders{
@@ -225,11 +289,30 @@
     padding-left: 1em;
   }
 
-  .sliders .slidecontainer{
-    margin: 0 0 1em 3.1em ;
+  .sliders .slidecontainer1 {
+    margin: 0 0 1em  0.6em ;
     display: flex;
     
 
+  }
+
+
+  .sliders .slidecontainer2{
+    margin: 0 0 1em  3em ;
+        display: flex;
+    
+
+  }
+
+
+  button:hover{
+
+    background-color: #bef8f6;
+    border: 2px solid #000000;
+    color: #000000;
+    border-radius: 5px;
+    font-weight: 600;
+    
   }
 
   .run-button-div{
@@ -244,10 +327,21 @@
     margin: 0 0 0 2em ;
     padding: 0.8em 0 0.8em 0;
     width: 33%;
+    height: 25%;
     border: 2px solid #EDAE00;
     background-color: #EDAE00;
     color: azure;
     font-weight: 600;
+    border-radius: 5px;
+
+  }
+
+
+  .run-button-div button:hover{
+
+    border: 2px solid #EDAE00;
+    background-color: #f8c32f;
+    font-weight: 700;
     border-radius: 5px;
 
   }
@@ -273,14 +367,15 @@
   .divs{
     overflow: hidden;
     height: 100vh;
-    background-image: url("./assets/background2.svg");;
+    background-image: url("./assets/background1080.svg");
+    background-repeat: no-repeat;
   }
 
   .black-div{
     	background-color: black;
 	    transform: skewY(-60deg);
       position: relative;
-      height: 100vh;
+      height: 100%;
       z-index: -200;
       bottom: 330%;
   }
