@@ -63,7 +63,7 @@
 
       <div id="footer">
 
-        <h2>Alejandro Mayorga - 2021</h2>
+        <h3>Alejandro Mayorga - 2021</h3>
 
       </div>
 
@@ -71,7 +71,7 @@
     </div>
 
 
-    <div class="black-div">
+    <!--div class="black-div">
 
     </div>
     <div class="yellow-div">
@@ -80,7 +80,7 @@
 
     <div class="pink-div">
 
-    </div>
+    </div-->
 
 
   </div>
@@ -104,43 +104,11 @@
       -moz-osx-font-smoothing: grayscale;
   }
 
-  .divs{
-    overflow: hidden;
-    height: 100vh;
-  }
-
-  .black-div{
-    	background-color: black;
-	    transform: skewY(-60deg);
-      position: relative;
-      height: 100vh;
-      z-index: -300;
-      bottom: 2300px;
-  }
-
-  .yellow-div{
-    	background-color: #EDAE00;
-	    transform: skewY(-80deg);
-      position: relative;
-      height: 500vh;
-      z-index: -200;
-      bottom: 2300px;
-  }
-
-  .pink-div{
-    	background-color: #DC8B70;
-	    transform: skewY(20deg);
-      position: relative;
-      height: 100vh;
-      z-index: -100;
-      bottom: 30px;
-  }
 
   .home{
 
       height: 100vh;
       font-family: 'Lato', sans-serif;
-
 
       display: grid;
       grid-template-columns: repeat(7, 1fr);
@@ -173,14 +141,14 @@
   #title h1{
     font-weight: 500;
     margin: 0 0 0.2em 0;
-    color: #106591;
+    color: #000000;
     margin: 0;
   }
 
   #title hr{
 
     width: 100%;
-    color: #106591;
+    color: #000000;
     display: inline-block;
     margin-bottom: 1em;
 
@@ -203,6 +171,7 @@
     border-radius: 7px;
     height: 100%;
     width: 70%;
+
 
   }
 
@@ -237,7 +206,7 @@
   .element-placement-buttons button{
     margin: 0 0 1em 2em;
     padding: 0.6em 0 0.6em 0;
-    width: 22%;
+    width: 33%;
     display: block;
     border: 2px solid #106591;
     color: #106591;
@@ -253,10 +222,13 @@
     grid-area: sliders;
     display: flex;
     padding-top: 1em;
+    padding-left: 1em;
   }
 
   .sliders .slidecontainer{
     margin: 0 0 1em 3.1em ;
+    display: flex;
+    
 
   }
 
@@ -271,7 +243,7 @@
   .run-button-div button{
     margin: 0 0 0 2em ;
     padding: 0.8em 0 0.8em 0;
-    width: 22%;
+    width: 33%;
     border: 2px solid #EDAE00;
     background-color: #EDAE00;
     color: azure;
@@ -288,9 +260,47 @@
     align-items: center;
   }
 
-    #footer h2{
+    #footer h3{
+
+    margin-top: 1em;
     color: white;
     font-weight: 300;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+
+
+  .divs{
+    overflow: hidden;
+    height: 100vh;
+    background-image: url("./assets/background2.svg");;
+  }
+
+  .black-div{
+    	background-color: black;
+	    transform: skewY(-60deg);
+      position: relative;
+      height: 100vh;
+      z-index: -200;
+      bottom: 330%;
+  }
+
+  .yellow-div{
+    	background-color: #EDAE00;
+	    transform: skewY(-80deg);
+      position: relative;
+      height: 500vh;
+      z-index: -300;
+      bottom: 750%;
+  }
+
+  .pink-div{
+    	background-color: #DC8B70;
+	    transform: skewY(20deg);
+      position: relative;
+      height: 100vh;
+      z-index: -100;
+      bottom: 4000px;
   }
 
 
@@ -318,4 +328,6 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+
 </style>
